@@ -29,11 +29,8 @@ async fn main() -> Result<(), Error> {
 
         let parsed_data: Value = from_str(&places).unwrap();
         let data = parsed_data["data"].as_array().unwrap();
-        let parsed_data: Value = from_str(&places).unwrap();
         
-        let modified_data: Vec<Value> = parsed_data["data"]
-        .as_array()
-        .unwrap()
+        let modified_data: Vec<Value> = data
         .iter()
         .map(|item| 
         {
